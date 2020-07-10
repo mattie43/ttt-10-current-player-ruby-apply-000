@@ -1,9 +1,13 @@
 def turn_count(board)
-  turn = 0
-  board.each { |let| turn += 1 if let == "X" || let == "O" }
-  return turn
+  count = 0
+  board.each { |let| count += 1 if let == "X" || let == "O" }
+  return count
 end
 
-def current_player
-  
+def current_player(board)
+  if turn_count(board) % 2 == 0
+    return "X"
+  else
+    return "O"
+  end
 end
